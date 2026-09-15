@@ -6,18 +6,18 @@ import {
   Outlet,
 } from "react-router-dom";
 
-import Sidebar from "./components/sidebar";
-import Header from "./components/Header";
+import Sidebar from "./components/Sidebar.jsx";
+import Header from "./components/Header.jsx";
 
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Dashboard from "./pages/dashboard";
-import Menu from "./pages/Menu";
-import Orders from "./pages/Orders";
-import Billing from "./pages/Billing";
-import Payments from "./pages/Payments";
-import Reports from "./pages/Reports";
-import Settings from "./pages/Settings";
+import Login from "./pages/Login.jsx";
+import Signup from "./pages/Signup.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import Menu from "./pages/menu.jsx";
+import Orders from "./pages/Orders.jsx";
+import Billing from "./pages/Billing.jsx";
+import Payments from "./pages/Payments.jsx";
+import Reports from "./pages/Reports.jsx";
+import Settings from "./pages/Settings.jsx";
 
 function ProtectedLayout() {
   return (
@@ -36,7 +36,6 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-
         <Route path="/" element={<Navigate to="/dashboard" />} />
 
         <Route path="/login" element={<Login />} />
@@ -51,7 +50,6 @@ function App() {
           <Route path="/reports" element={<Reports />} />
           <Route path="/settings" element={<Settings />} />
         </Route>
-
       </Routes>
     </BrowserRouter>
   );
