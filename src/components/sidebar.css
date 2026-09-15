@@ -162,4 +162,42 @@
     height: 42px;
   }
 }
+/* FIX SIDEBAR CONTENT VISIBILITY */
 
+.sidebar {
+  display: flex !important;
+  flex-direction: column !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  overflow-y: auto !important;
+}
+
+.sidebar .brand,
+.sidebar .side-section,
+.sidebar .side-label,
+.sidebar .side-link,
+.sidebar .logout-button {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.sidebar .side-section {
+  display: block !important;
+}
+
+.sidebar .side-link {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.sidebar .side-label {
+  display: block !important;
+}
+
+.sidebar .logout-button {
+  display: flex !important;
+  align-items: center !important;
+}
