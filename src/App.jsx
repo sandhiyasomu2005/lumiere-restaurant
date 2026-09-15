@@ -1,3 +1,6 @@
+
+import { useState } from "react";
+
 import {
   BrowserRouter,
   Routes,
@@ -19,38 +22,126 @@ import Payments from "./pages/Payments.jsx";
 import Reports from "./pages/Reports.jsx";
 import Settings from "./pages/Settings.jsx";
 
+
 function ProtectedLayout() {
+
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
     <div className="app-layout">
-      <Sidebar />
 
-      <main className="main-area">
-        <Header />
-        <Outlet />
-      </main>
+      {/* SIDEBAR */}
+      <Sidebar
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+      />
+
+
+      {/* MAIN AREA */}
+      <div className="main-area">
+
+        {/* HEADER */}
+        <Header
+          setMobileOpen={setMobileOpen}
+        />
+
+
+        {/* PAGE CONTENT */}
+        <main className="page-content">
+          <Outlet />
+        </main>
+
+      </div>
+
     </div>
   );
 }
 
+
 function App() {
   return (
     <BrowserRouter>
+
       <Routes>
-        <Route path="/" element={<Navigate to="/dashboard" />} />
 
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        {/* DEFAULT */}
+        <Route
+          path="/"
+          element={
+            <Navigate
+              to="/dashboard"
+              replace
+            />
+          }
+        />
 
+
+        {/* AUTH */}
+        <Route
+          path="/login"
+          element={<Login />}
+        />
+
+        <Route
+          path="/signup"
+          element={<Signup />}
+        />
+
+
+        {/* APPLICATION */}
         <Route element={<ProtectedLayout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/billing" element={<Billing />} />
-          <Route path="/payments" element={<Payments />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/settings" element={<Settings />} />
+
+          <Route
+            path="/dashboard"
+            element={<Dashboard />}
+          />
+
+          <Route
+            path="/menu"
+            element={<Menu />}
+          />
+
+          <Route
+            path="/orders"
+            element={<Orders />}
+          />
+
+          <Route
+            path="/billing"
+            element={<Billing />}
+          />
+
+          <Route
+            path="/payments"
+            element={<Payments />}
+          />
+
+          <Route
+            path="/reports"
+            element={<Reports />}
+          />
+
+          <Route
+            path="/settings"
+            element={<Settings />}
+          />
+
         </Route>
+
+
+        {/* UNKNOWN URL */}
+        <Route
+          path="*"
+          element={
+            <Navigate
+              to="/dashboard"
+              replace
+            />
+          }
+        />
+
       </Routes>
+
     </BrowserRouter>
   );
 }

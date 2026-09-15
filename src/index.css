@@ -2931,3 +2931,315 @@ img {
 
   color: #173f35;
 }
+
+/* =========================================
+   GLOBAL RESPONSIVE FIX
+   Lumière Restaurant
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* =========================================
+   MAIN APP
+========================================= */
+
+.app-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  min-width: 0;
+}
+
+.main-area {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.page-content {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   IMPORTANT:
+   PREVENT ELEMENTS FROM BREAKING MOBILE
+========================================= */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+table {
+  max-width: 100%;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .app-layout {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  .main-area {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .page-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* Don't allow fixed desktop widths */
+  .page-content > * {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* Cards */
+  .card,
+  .stat-card,
+  .kpi-card,
+  .dashboard-card {
+    max-width: 100%;
+  }
+
+  /* Forms */
+  form {
+    max-width: 100%;
+  }
+
+  /* Inputs */
+  input,
+  select,
+  textarea {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Images */
+  img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 480px) {
+
+  .app-layout,
+  .main-area,
+  .page-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .page-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+}
+
+
+/* =========================================
+   TABS FIX
+   Prevent tabs from going outside screen
+========================================= */
+
+.tabs,
+.tab-container,
+.category-tabs,
+.menu-tabs,
+.filter-tabs {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+
+/* Mobile tabs */
+@media (max-width: 768px) {
+
+  .tabs,
+  .tab-container,
+  .category-tabs,
+  .menu-tabs,
+  .filter-tabs {
+
+    display: flex;
+
+    width: 100%;
+
+    min-width: 0;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    overflow-x: visible;
+
+    overflow-y: visible;
+
+  }
+
+  .tabs button,
+  .tab-container button,
+  .category-tabs button,
+  .menu-tabs button,
+  .filter-tabs button {
+
+    flex: 1 1 auto;
+
+    min-width: 0;
+
+    max-width: 100%;
+
+    white-space: normal;
+
+  }
+
+}
+
+
+/* =========================================
+   BUTTON ROWS
+========================================= */
+
+.button-row,
+.action-buttons,
+.header-actions,
+.controls {
+  max-width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+
+  .button-row,
+  .action-buttons,
+  .header-actions,
+  .controls {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+  }
+
+}
+
+
+/* =========================================
+   DESKTOP TABLES ON MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .table-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-container table {
+    min-width: 600px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE SPACING
+========================================= */
+
+@media (max-width: 480px) {
+
+  .page-content {
+    padding-top: 0;
+  }
+
+  .button-row button,
+  .action-buttons button {
+    min-height: 42px;
+  }
+
+}
+

@@ -1,0 +1,165 @@
+
+/* =========================================
+   MOBILE SIDEBAR CONTROLS
+========================================= */
+
+.mobile-menu-button {
+  display: none;
+}
+
+.mobile-close-button {
+  display: none;
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+
+/* =========================================
+   MOBILE SIDEBAR
+========================================= */
+
+@media (max-width: 768px) {
+
+  /* Hamburger */
+  .mobile-menu-button {
+    display: flex;
+
+    position: fixed;
+    top: 14px;
+    left: 14px;
+
+    width: 44px;
+    height: 44px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    z-index: 9999;
+  }
+
+
+  /* Sidebar */
+  .sidebar {
+    position: fixed !important;
+
+    top: 0;
+    left: 0;
+
+    width: 280px !important;
+    max-width: 85vw;
+
+    height: 100vh;
+
+    z-index: 10000;
+
+    transform: translateX(-100%);
+
+    transition: transform 0.3s ease;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  /* Open sidebar */
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+
+  /* Close button */
+  .mobile-close-button {
+    display: flex;
+
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 38px;
+    height: 38px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: transparent;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    z-index: 10001;
+  }
+
+
+  /* Overlay */
+  .sidebar-overlay {
+    display: block;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9998;
+
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+
+  /* Sidebar sections */
+  .side-section {
+    width: 100%;
+    min-width: 0;
+  }
+
+
+  /* Navigation links */
+  .side-link {
+    width: 100%;
+    min-height: 46px;
+
+    white-space: nowrap;
+  }
+
+
+  /* Logout */
+  .logout-button {
+    width: calc(100% - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 480px) {
+
+  .sidebar {
+    width: 270px !important;
+    max-width: 85vw;
+  }
+
+  .mobile-menu-button {
+    top: 10px;
+    left: 10px;
+
+    width: 42px;
+    height: 42px;
+  }
+}
+
