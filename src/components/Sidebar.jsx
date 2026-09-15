@@ -1,8 +1,13 @@
 
 import { NavLink, useNavigate } from "react-router-dom";
+import "./sidebar.css";
 
 function Sidebar({ mobileOpen, setMobileOpen }) {
   const navigate = useNavigate();
+
+  const closeSidebar = () => {
+    setMobileOpen(false);
+  };
 
   const logout = () => {
     localStorage.removeItem("lumiereUser");
@@ -10,13 +15,8 @@ function Sidebar({ mobileOpen, setMobileOpen }) {
     navigate("/login");
   };
 
-  const closeSidebar = () => {
-    setMobileOpen(false);
-  };
-
   return (
     <>
-      {/* Mobile Overlay */}
       {mobileOpen && (
         <div
           className="sidebar-overlay"
@@ -26,16 +26,12 @@ function Sidebar({ mobileOpen, setMobileOpen }) {
 
       <aside className={`sidebar ${mobileOpen ? "mobile-open" : ""}`}>
 
-        {/* Mobile Close */}
         <button
           className="mobile-close-button"
           onClick={closeSidebar}
-          aria-label="Close menu"
         >
           ×
         </button>
-
-        <div className="sidebar-decoration"></div>
 
         {/* BRAND */}
         <div className="brand">
@@ -47,11 +43,7 @@ function Sidebar({ mobileOpen, setMobileOpen }) {
           </div>
         </div>
 
-
-        {/* =========================
-            OVERVIEW
-        ========================= */}
-
+        {/* OVERVIEW */}
         <div className="side-section">
           <span className="side-label">OVERVIEW</span>
 
@@ -65,11 +57,7 @@ function Sidebar({ mobileOpen, setMobileOpen }) {
           </NavLink>
         </div>
 
-
-        {/* =========================
-            OPERATIONS
-        ========================= */}
-
+        {/* OPERATIONS */}
         <div className="side-section">
           <span className="side-label">OPERATIONS</span>
 
@@ -101,11 +89,7 @@ function Sidebar({ mobileOpen, setMobileOpen }) {
           </NavLink>
         </div>
 
-
-        {/* =========================
-            FINANCE
-        ========================= */}
-
+        {/* FINANCE */}
         <div className="side-section">
           <span className="side-label">FINANCE</span>
 
@@ -128,11 +112,7 @@ function Sidebar({ mobileOpen, setMobileOpen }) {
           </NavLink>
         </div>
 
-
-        {/* =========================
-            SYSTEM
-        ========================= */}
-
+        {/* SYSTEM */}
         <div className="side-section">
           <span className="side-label">SYSTEM</span>
 
@@ -146,9 +126,7 @@ function Sidebar({ mobileOpen, setMobileOpen }) {
           </NavLink>
         </div>
 
-
         {/* LOGOUT */}
-
         <button
           className="logout-button"
           onClick={logout}

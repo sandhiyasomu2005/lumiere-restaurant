@@ -23,6 +23,17 @@ import Reports from "./pages/Reports.jsx";
 import Settings from "./pages/Settings.jsx";
 
 
+<Route element={<ProtectedLayout />}>
+  <Route path="/dashboard" element={<Dashboard />} />
+  <Route path="/menu" element={<Menu />} />
+  <Route path="/orders" element={<Orders />} />
+  <Route path="/billing" element={<Billing />} />
+  <Route path="/payments" element={<Payments />} />
+  <Route path="/reports" element={<Reports />} />
+  <Route path="/settings" element={<Settings />} />
+</Route>
+
+
 function ProtectedLayout() {
 
   const [mobileOpen, setMobileOpen] = useState(false);
